@@ -71,7 +71,7 @@ public class CreateDistTask extends BaritoneGradleTask {
     private static synchronized String sha1(Path path) {
         try {
             if (SHA1_DIGEST == null) {
-                SHA1_DIGEST = MessageDigest.getInstance("SHA-1");
+                SHA1_DIGEST = MessageDigest.getInstance("SHA-256");
             }
             return DatatypeConverter.printHexBinary(SHA1_DIGEST.digest(Files.readAllBytes(path))).toLowerCase();
         } catch (Exception e) {
